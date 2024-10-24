@@ -1,0 +1,131 @@
+body {
+    background-color: rgb(9, 4, 35);
+    font-family: Roboto, Arial;
+    margin: 0;
+    height: 1000px;
+}
+
+.header {
+    height: 40px;
+    background-color: rgb(21, 9, 52);
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
+.left-header {
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 16.5px;
+}
+
+.hamburger-menu {
+    height: 22px;
+}
+
+.center-header {
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.right-header {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    height: 30px;
+    width: 32px;
+    object-fit: fill;
+    object-position: top;
+    border-radius: 16.5px;
+}
+
+.main {
+    margin-top: 80px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.image-starter {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+    height: 600px;
+}
+
+.ilustration-holder1,
+.ilustration-holder2,
+.ilustration-holder3 {
+    position: relative;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.ilustration-starter1,
+.ilustration-starter2,
+.ilustration-starter3 {
+    height: 100%;
+    filter: grayscale(100);
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+    animation: fade-in-top 1s ease-in-out;
+}
+
+.ilustration-starter1,
+.ilustration-starter3 {
+    animation: fade-in-bottom 1s ease-in-out;
+}
+
+.ilustration-starter3 {
+    object-position: top;
+}
+
+.ilustration-starter2 {
+    object-position: 50% 22%;
+}
+
+.ilustration-holder1:hover .ilustration-starter1,
+.ilustration-holder2:hover .ilustration-starter2,
+.ilustration-holder3:hover .ilustration-starter3 {
+    transform: scale(1.5);
+    filter: grayscale(0);
+}
+
+/* Animation */
+@keyframes fade-in-top {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-bottom {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
